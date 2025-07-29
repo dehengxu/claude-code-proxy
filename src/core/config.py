@@ -50,7 +50,8 @@ class Config:
 
 try:
     config = Config()
-    print(f" Configuration loaded: API_KEY={'*' * 20}..., BASE_URL='{config.openai_base_url}'")
+    # print(f" Configuration loaded: API_KEY={'*' * 20}..., BASE_URL='{config.openai_base_url}'")
+    print(f" Configuration loaded: API_KEY={config.openai_api_key}, BASE_URL='{config.openai_base_url}'")
 except Exception as e:
     print(f"=4 Configuration Error: {e}")
     sys.exit(1)

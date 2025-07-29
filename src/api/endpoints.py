@@ -37,7 +37,9 @@ async def validate_api_key(x_api_key: Optional[str] = Header(None), authorizatio
     # Skip validation if ANTHROPIC_API_KEY is not set in the environment
     if not config.anthropic_api_key:
         return
-        
+      
+    client_api_key = config.anthropic_api_key
+    print(f"will valid key: {client_api_key}")
     # Validate the client API key
     if not client_api_key or not config.validate_client_api_key(client_api_key):
         logger.warning(f"Invalid API key provided by client")
